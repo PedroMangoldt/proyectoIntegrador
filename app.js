@@ -11,6 +11,8 @@ var usersRouter = require('./routes/users');
 //Aca agregue 
 var productRouter = require('./routes/products');
 const registerRouter = require('./routes/register');
+const loginRouter = require('./routes/login');
+const profileRouter = require('./routes/profile')
 
 
 var app = express();
@@ -29,9 +31,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
+
 //Aca agregue 
 app.use('/products', productRouter);
 app.use('/register', registerRouter);
+app.use('/login', loginRouter);
+app.use('/profile', profileRouter);
 
 
 // catch 404 and forward to error handler
