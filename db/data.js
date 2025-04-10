@@ -1,127 +1,126 @@
 const data = {
-    usuario: {
-      email: 'juanperez@ejemplito.com',
-      usuario: 'juanperez',
-      contrasenia: 'supersegura123',
-      fechaNacimiento: '1995-06-15',
-      documento: 40123456,
-      fotoPerfil: '/images/users/img-home-banner.jpg'
+  usuario: {
+    email: 'juanperez@ejemplito.com',
+    usuario: 'juanperez',
+    contrasenia: 'supersegura123',
+    fechaNacimiento: '1995-06-15',
+    documento: 40123456,
+    fotoPerfil: '/images/users/img-home-banner.jpg'
+  },
+
+  productos: [
+    {
+      id: 1,
+      nombre: 'Mouse gamer RGB',
+      descripcion: 'Mouse con luces LED, diseño ergonómico y múltiples botones para gaming.',
+      imagen: '/images/products/mouseGamer.jpeg',
+      comentarios: [
+        {
+          nombreUsuario: 'maria123',
+          texto: '¡Anda perfecto para jugar al Fortnite!',
+          imagenPerfil: '/images/users/default-image.png'
+        },
+        {
+          nombreUsuario: 'coffeeLover',
+          texto: 'Me encanta su diseño.',
+          imagenPerfil: '/images/users/default-image.png'
+        }
+      ]
     },
-  
-    productos: [
-      {
-        id: 1,
-        nombre: 'Cafetera Moulinex',
-        descripcion: 'Cafetera eléctrica con filtro permanente y diseño elegante.',
-        imagen: '/images/products/img-cafetera-moulinex.jpg',
-        comentarios: [
-          {
-            nombreUsuario: 'maria123',
-            texto: '¡Hace el café rapidísimo!',
-            imagenPerfil: '/images/users/default-image.png'
-          },
-          {
-            nombreUsuario: 'coffeeLover',
-            texto: 'Me encanta su diseño.',
-            imagenPerfil: '/images/users/default-image.png'
-          }
-        ]
-      },
-      {
-        id: 2,
-        nombre: 'MacBook Pro 2019',
-        descripcion: 'Notebook Apple con chip Intel i7 y 16GB de RAM.',
-        imagen: '/images/products/img-macbook-pro-2019.jpg',
-        comentarios: [
-          {
-            nombreUsuario: 'techie88',
-            texto: 'Excelente para edición de video.',
-            imagenPerfil: '/images/users/default-image.png'
-          }
-        ]
-      },
-      {
-        id: 3,
-        nombre: 'Samsung Galaxy S10',
-        descripcion: 'Smartphone Android con triple cámara y pantalla AMOLED.',
-        imagen: '/images/products/img-samsung-galaxy-s10.jpg',
-        comentarios: [
-          {
-            nombreUsuario: 'ana_rock',
-            texto: 'El modo nocturno es genial.',
-            imagenPerfil: '/images/users/default-image.png'
-          }
-        ]
-      },
-      {
-        id: 4,
-        nombre: 'Smart TV Samsung 55"',
-        descripcion: 'Televisor 4K UHD con acceso a Netflix, YouTube y más.',
-        imagen: '/images/products/img-tv-samsung-smart.jpg',
-        comentarios: []
-      },
-      {
-        id: 5,
-        nombre: 'Auriculares Sony WH-1000XM4',
-        descripcion: 'Auriculares con cancelación activa de ruido y Bluetooth.',
-        imagen: '/images/products/default-image.png',
-        comentarios: [
-          {
-            nombreUsuario: 'sonicman',
-            texto: 'El sonido es increíble.',
-            imagenPerfil: '/images/users/default-image.png'
-          }
-        ]
-      },
-      {
-        id: 6,
-        nombre: 'Teclado mecánico Redragon',
-        descripcion: 'Teclado con switches rojos y retroiluminación RGB.',
-        imagen: '/images/products/default-image.png',
-        comentarios: []
-      },
-      {
-        id: 7,
-        nombre: 'Monitor LG 29" UltraWide',
-        descripcion: 'Pantalla ultra panorámica para multitarea y gaming.',
-        imagen: '/images/products/default-image.png',
-        comentarios: []
-      },
-      {
-        id: 8,
-        nombre: 'Parlante JBL Flip 5',
-        descripcion: 'Parlante Bluetooth resistente al agua con gran sonido.',
-        imagen: '/images/products/default-image.png',
-        comentarios: [
-          {
-            nombreUsuario: 'musicfan',
-            texto: 'Ideal para la playa.',
-            imagenPerfil: '/images/users/default-image.png'
-          }
-        ]
-      },
-      {
-        id: 9,
-        nombre: 'Impresora Epson EcoTank',
-        descripcion: 'Impresora a tinta continua económica y fácil de recargar.',
-        imagen: '/images/products/default-image.png',
-        comentarios: []
-      },
-      {
-        id: 10,
-        nombre: 'Reloj inteligente Xiaomi Mi Band 6',
-        descripcion: 'Monitor de actividad con pantalla AMOLED y gran autonomía.',
-        imagen: '/images/products/default-image.png',
-        comentarios: [
-          {
-            nombreUsuario: 'lucas_fit',
-            texto: 'Lo uso todos los días para correr.',
-            imagenPerfil: '/images/users/default-image.png'
-          }
-        ]
-      }
-    ]
-  };
-  
-  module.exports = data;
-  
+    {
+      id: 2,
+      nombre: 'Mouse Pad extendido',
+      descripcion: 'Alfombrilla para teclado y mouse con superficie antideslizante.',
+      imagen: '/images/products/mousePadGamer.png',
+      comentarios: [
+        {
+          nombreUsuario: 'techie88',
+          texto: 'Excelente para edición de video.',
+          imagenPerfil: '/images/users/default-image.png'
+        }
+      ]
+    },
+    {
+      id: 3,
+      nombre: 'Parlantes estéreo gamer',
+      descripcion: 'Parlantes con diseño gamer y sonido envolvente RGB.',
+      imagen: '/images/products/parlantesGamer.png',
+      comentarios: [
+        {
+          nombreUsuario: 'ana_rock',
+          texto: 'El sonido de los parlantes es increíble.',
+          imagenPerfil: '/images/users/default-image.png'
+        }
+      ]
+    },
+    {
+      id: 4,
+      nombre: 'Luces LED RGB',
+      descripcion: 'Tira de luces LED para ambientar setups gamer con control remoto.',
+      imagen: '/images/products/lucesLedGamer.jpeg',
+      comentarios: []
+    },
+    {
+      id: 5,
+      nombre: 'Escritorio gamer',
+      descripcion: 'Escritorio con soporte para monitor, auriculares y estructura resistente.',
+      imagen: '/images/products/escritorioGamer.png',
+      comentarios: [
+        {
+          nombreUsuario: 'sonicman',
+          texto: 'Muy cómodo.',
+          imagenPerfil: '/images/users/default-image.png'
+        }
+      ]
+    },
+    {
+      id: 6,
+      nombre: 'Silla gamer ergonómica',
+      descripcion: 'Silla con soporte lumbar, reclinable y apoyabrazos ajustables.',
+      imagen: '/images/products/sillaGamer.png',
+      comentarios: []
+    },
+    {
+      id: 7,
+      nombre: 'Auriculares con micrófono',
+      descripcion: 'Auriculares con sonido envolvente y micrófono retráctil.',
+      imagen: '/images/products/auricularesGamer.jpeg',
+      comentarios: []
+    },
+    {
+      id: 8,
+      nombre: 'Teclado mecánico RGB',
+      descripcion: 'Teclado mecánico con iluminación LED y switches rojos.',
+      imagen: '/images/products/tecladoGamer.png',
+      comentarios: [
+        {
+          nombreUsuario: 'musicfan',
+          texto: 'Muy lindo y responde rápido.',
+          imagenPerfil: '/images/users/default-image.png'
+        }
+      ]
+    },
+    {
+      id: 9,
+      nombre: 'Compu Gamer RGB',
+      descripcion: 'Gabinete con panel de vidrio templado y ventiladores RGB incluidos.',
+      imagen: '/images/products/cpuGamer.png',
+      comentarios: []
+    },
+    {
+      id: 10,
+      nombre: 'Monitor gamer 144Hz',
+      descripcion: 'Monitor ultra ancho con alta tasa de refresco para juegos.',
+      imagen: '/images/products/monitorGamer.png',
+      comentarios: [
+        {
+          nombreUsuario: 'lucas_fit',
+          texto: 'Es muy bueno para juegos competitivos.',
+          imagenPerfil: '/images/users/default-image.png'
+        }
+      ]
+    }
+  ]
+};
+
+module.exports = data;
