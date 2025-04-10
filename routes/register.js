@@ -4,4 +4,4 @@ const registerController = require("../controllers/registerController")
 
 router.get("/", registerController.register)
 
-module.exports = router
+module.exports = router;

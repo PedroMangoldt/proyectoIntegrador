@@ -260,7 +260,7 @@ hr {
 /*====== Footer ======*/
 .main-footer {
   background-color: #ffffff;
-  padding: 20px 0;
+  padding: 40px 0;
   margin-top: 80px;
 }
 
@@ -424,6 +424,57 @@ hr {
 }
 
 /*====== Formularios ======*/
+
+
+.form-register {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.form-register label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  color: #333;
+}
+
+
+.form-register input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.form-register button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3483fa;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+
+}
+
+.form-register button:hover {
+  background-color: #2968c8;
+}
+
+
 .form-label {
   display: inline-block;
   font-size: 1.6em;
