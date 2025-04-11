@@ -1,16 +1,17 @@
 /*====== Fonts ======*/
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Orbitron:wght@500;700&family=Rajdhani:wght@500;700&display=swap');
 
 
 /*====== Variables ======*/
+/*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
-  --dark-blue: #03264C;
-  --light-blue: #1259c3;
-  --gray: #666666;
-  --light-gray: #ebebeb;
-  --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --main-bg: #0f1b24;
+  --container-bg: #1e2a34;
+  --main-text: #ffffff;
+  --secondary-text: #a0a0a0;
+  --accent-color: #00f0ff;
+  --accent-alt: #00ffab;
+  --btn-color: #007bff;
 }
 
 
@@ -579,3 +580,55 @@ textarea.form-input {
     margin: auto;
   }
 }
+
+/*====== NUEVOS ESTILOS CSS!!! ======*/
+
+body {
+  background-color: var(--main-bg);
+  color: var(--main-text);
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, .main-title {
+  font-family: 'Orbitron', sans-serif;
+}
+
+a, button, .product-title, .main-navbar a {
+  font-family: 'Rajdhani', sans-serif;
+  color: var(--accent-color);
+}
+
+.main-header {
+  background-color: #000;
+  border-bottom: 2px solid var(--btn-color);
+}
+
+.product-box {
+  background-color: var(--container-bg);
+  border: 1px solid var(--btn-color);
+}
+
+.products-title {
+  color: var(--accent-color);
+}
+
+button, .buy-now-button {
+  background-color: var(--btn-color);
+  color: #000;
+  font-weight: bold;
+}
+
+button:hover, .buy-now-button:hover {
+  background-color: var(--accent-color);
+  color: #000;
+}
+
+.tech-slogan {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent-color);
+  text-align: center;
+  font-size: 1.6em;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
