@@ -1,19 +1,10 @@
 const data = require('../db/data');
 
 const productController = {
-  detalle: function (req, res) {
-    const id = Number(req.params.id);
-    const productos = data.productos;
+    detalle: function (req, res) {
 
-    for (let i = 0; i < productos.length; i++) {
-      if (productos[i].id === id) {
-        return res.render('product', { producto: productos[i] });
-      }
-    }
-
-
-    return "No se encontró ningún producto";
-  }
-};
+        const producto = data.productos[4];
+        return res.render('product', { producto });
+    }};
 
 module.exports = productController;

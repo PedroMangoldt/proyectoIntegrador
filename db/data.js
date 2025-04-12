@@ -5,7 +5,7 @@ const data = {
     contrasenia: 'supersegura123',
     fechaNacimiento: '1995-06-15',
     documento: 40123456,
-    fotoPerfil: '/images/users/img-home-banner.jpg'
+    fotoPerfil: '/images/users/fotoPerfil.jpeg'
   },
 
   productos: [

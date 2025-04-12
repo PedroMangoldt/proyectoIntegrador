@@ -150,7 +150,9 @@ hr {
   padding: 5px 0;
   border-bottom: solid 1px var(--gray);
 }
-
+.right-navbar img{
+  width: 20%;
+}
 
 
 /*====== Banner ======*/
@@ -431,8 +433,9 @@ hr {
   width: 100%;
   max-width: 500px;
   padding: 20px 30px;
-  background-color: white;
+  background-color: rgb(28, 28, 28);
   border-radius: 12px;
+  border: 2px solid #00f0ff ;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   margin-left: auto;
@@ -445,7 +448,7 @@ hr {
   font-weight: 600;
   margin-bottom: 5px;
   margin-top: 15px;
-  color: #333;
+  color: #fff8f8;
 }
 
 
@@ -461,7 +464,7 @@ hr {
 .form-register button {
   width: 100%;
   padding: 12px;
-  background-color: #3483fa;
+  background-color: #12234b;
   color: white;
   font-size: 16px;
   font-weight: 600;
