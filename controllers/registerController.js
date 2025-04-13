@@ -1,6 +1,8 @@
+const { usuario } = require("../db/data");
+
 const registerController = {
     register: function (req, res) {
-      res.render('register');
+      res.render('register', {user: usuario});
     }
   };
   
