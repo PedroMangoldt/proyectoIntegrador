@@ -38,7 +38,7 @@ app.use('/products', productRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 
-app.use('/products/add', productAddRouter);
+app.use('/productsadd', productAddRouter);
 app.use('/search-results', searchResultsRouter);
 
 
