@@ -681,3 +681,15 @@ button:hover, .buy-now-button:hover {
   padding: 15px 0;
   font-size: 1.4em;
 }
+
+.logout {
+  background: transparent;
+  border: 0px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #00eaff; 
+}
+
+.logout:hover {
+  color: #1259c3;
+}
