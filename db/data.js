@@ -1,10 +1,10 @@
 const data = {
   usuario: {
-    email: 'juanperez@ejemplito.com',
-    usuario: 'juanperez',
-    contrasenia: 'supersegura123',
+    email: 'tung.sahur@gmail.com',
+    usuario: 'TungSahur',
+    contrasenia: 'tungitungisahursito123',
     fechaNacimiento: '1995-06-15',
-    documento: 40123456,
+    documento: 89123456,
     fotoPerfil: '/images/users/fotoPerfil.jpeg'
   },
 
