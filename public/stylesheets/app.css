@@ -638,3 +638,46 @@ button:hover, .buy-now-button:hover {
   padding-bottom: 20px;
 }
 
+/*====== FOOOOOT !!! ======*/
+
+.main-footer {
+  background-color: var(--container-bg); 
+  padding: 40px 0;
+  margin-top: 80px;
+  color: var(--main-text);
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+}
+
+.footer-data {
+  text-align: center;
+}
+
+.footer-data i {
+  color: var(--accent-color); 
+  font-size: 3.5em;
+}
+
+.footer-data h2 {
+  color: var(--main-text);
+  font-size: 2.4em;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.footer-data p {
+  color: var(--secondary-text);
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.sub-footer {
+  border-top: 1px solid var(--accent-color);
+  background-color: var(--container-bg);
+}
+
+.sub-footer p {
+  margin: 0;
+  color: var(--secondary-text);
+  padding: 15px 0;
+  font-size: 1.4em;
+}
