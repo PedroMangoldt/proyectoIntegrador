@@ -10,10 +10,7 @@ var usersRouter = require('./routes/users');
 
 //Aca agregue 
 const productRouter = require('./routes/products');
-const registerRouter = require('./routes/register');
-const loginRouter = require('./routes/login');
-const productAddRouter = require('./routes/productadd');
-const searchResultsRouter = require('./routes/searchResults');
+
 
 
 var app = express();
@@ -35,11 +32,7 @@ app.use('/users', usersRouter);
 
 //Aca agregue 
 app.use('/products', productRouter);
-app.use('/register', registerRouter);
-app.use('/login', loginRouter);
 
-app.use('/productsadd', productAddRouter);
-app.use('/search-results', searchResultsRouter);
 
 
 

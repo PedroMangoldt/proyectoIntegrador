@@ -9,5 +9,9 @@ router.get('/', function(req, res, next) {
 const userController = require('../controllers/userController');
 
 router.get('/profile', userController.profile);
+router.get('/register', userController.register);
+router.get('/login', userController.login)
+
+
 
 module.exports = router;

@@ -16,6 +16,14 @@ const userController = {
         let productosDelUsuario = data.productos;
 
         return res.render('profile', { user: usuario, productos: productosDelUsuario});
-    }};
+    },
+    register: function (req, res) {
+        res.render('register', {user: data.usuario});
+    },
+    login: function (req, res) {
+        res.render('login', {user: data.usuario});
+    },
+};
+    
 
 module.exports = userController;
