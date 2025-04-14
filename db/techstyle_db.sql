@@ -51,15 +51,15 @@ INSERT INTO usuarios (email, contrasenia, fecha_nacimiento, dni, foto_perfil) VA
 
 INSERT INTO productos (id_usuario, imagen, nombre, descripcion) VALUES
 (1, '/images/products/mouseGamer.png', 'Mouse gamer RGB', 'Mouse con luces LED, diseño ergonómico y múltiples botones para gaming.'),
-(1, '/images/products/mousePadGame.png', 'Mouse Pad extendido', 'Alfombrilla para teclado y mouse con superficie antideslizante.'),
-(1, '/images/products/parlantesGame.png', 'Parlantes estéreo gamer', 'Parlantes con diseño gamer y sonido envolvente RGB.'),
-(1, '/images/products/lucesLedGamer.png', 'Luces LED RGB', 'Tira de luces LED para ambientar setups gamer con control remoto.'),
-(1, '/images/products/escritorioGame.png', 'Escritorio gamer', 'Escritorio con soporte para monitor, auriculares y estructura resistente.'),
-(1, '/images/products/sillaGame.png', 'Silla gamer ergonómica', 'Silla con soporte lumbar, reclinable y apoyabrazos ajustables.'),
-(1, '/images/products/auricularesGamer.png', 'Auriculares con micrófono', 'Auriculares con sonido envolvente y micrófono retráctil.'),
-(1, '/images/products/tecladoGame.png', 'Teclado mecánico RGB', 'Teclado mecánico con iluminación LED y switches rojos.'),
-(1, '/images/products/cpuGame.png', 'Compu Gamer RGB', 'Gabinete con panel de vidrio templado y ventiladores RGB incluidos.'),
-(1, '/images/products/monitorGame.png', 'Monitor gamer 144Hz', 'Monitor ultra ancho con alta tasa de refresco para juegos.');
+(2, '/images/products/mousePadGame.png', 'Mouse Pad extendido', 'Alfombrilla para teclado y mouse con superficie antideslizante.'),
+(3, '/images/products/parlantesGame.png', 'Parlantes estéreo gamer', 'Parlantes con diseño gamer y sonido envolvente RGB.'),
+(4, '/images/products/lucesLedGamer.png', 'Luces LED RGB', 'Tira de luces LED para ambientar setups gamer con control remoto.'),
+(5, '/images/products/escritorioGame.png', 'Escritorio gamer', 'Escritorio con soporte para monitor, auriculares y estructura resistente.'),
+(6, '/images/products/sillaGame.png', 'Silla gamer ergonómica', 'Silla con soporte lumbar, reclinable y apoyabrazos ajustables.'),
+(7, '/images/products/auricularesGamer.png', 'Auriculares con micrófono', 'Auriculares con sonido envolvente y micrófono retráctil.'),
+(8, '/images/products/tecladoGame.png', 'Teclado mecánico RGB', 'Teclado mecánico con iluminación LED y switches rojos.'),
+(9, '/images/products/cpuGame.png', 'Compu Gamer RGB', 'Gabinete con panel de vidrio templado y ventiladores RGB incluidos.'),
+(10, '/images/products/monitorGame.png', 'Monitor gamer 144Hz', 'Monitor ultra ancho con alta tasa de refresco para juegos.');
 
 INSERT INTO comentarios (id_producto, id_usuario, texto) VALUES
 (1, 2, '¡Anda perfecto para jugar al Fortnite!'),
