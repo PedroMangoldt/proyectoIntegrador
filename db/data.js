@@ -55,14 +55,14 @@ const data = {
     },
     {
       id: 4,
-      nombre: 'Luces LED RGB',
+      nombre: 'Luces gamer LED RGB ',
       descripcion: 'Tira de luces LED para ambientar setups gamer con control remoto.',
       imagen: '/images/products/lucesLedGamer.png',
       comentarios: []
     },
     {
       id: 5,
-      nombre: 'Escritorio gamer',
+      nombre: 'Escritorio gamer RGB',
       descripcion: 'Escritorio con soporte para monitor, auriculares y estructura resistente.',
       imagen: '/images/products/escritorioGame.png',
       comentarios: [
@@ -89,7 +89,7 @@ const data = {
     },
     {
       id: 8,
-      nombre: 'Teclado mecánico RGB',
+      nombre: 'Teclado mecánico RGB teclas Cherry RED',
       descripcion: 'Teclado mecánico con iluminación LED y switches rojos.',
       imagen: '/images/products/tecladoGame.png',
       comentarios: [
