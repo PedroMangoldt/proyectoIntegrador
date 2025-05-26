@@ -45,7 +45,32 @@ const userController = {
     });
 
     return res.redirect('/login');
-  }
+  },
+  loginProceso: async function (req, res) {
+    const { email, password, recordarme } = req.body;
+
+    const usuario = await db.User.findOne({ where: { email } });
+
+    if (usuario) {
+        const validPassword = bcrypt.compareSync(password, usuario.password);
+
+        if (validPassword) {
+            req.session.usuarioLogueado = usuario;
+
+            if (recordarme) {
+                res.cookie('userEmail', email, { maxAge: 1000 * 60 * 5 });
+            }
+
+            return res.redirect('/users/profile');
+        }
+
+        return res.send("La contraseña es incorrecta");
+    }
+
+    return res.send("Ese email no está registrado");
+}
+
+
 };
     
 
