@@ -19,7 +19,11 @@
 	<!-- Header -->
 	
 	<!-- /Header -->
-	<%- include('partials/headerLogueado')%>
+<% if (user) { %>
+  <%- include('partials/headerLogueado') %>
+<% } else { %>
+  <%- include('partials/headerNoLogueado') %>
+<% } %>
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
