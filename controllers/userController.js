@@ -54,31 +54,34 @@ const userController = {
     });
 },
   loginProceso: async function (req, res) {
-    const { email, password, recordarme } = req.body;
+    db.User.findOne({
+      where : [{email: req.body.email}]
+    })
+      .then(function(user) {
+        if (!user) {
+          return res.render("No existe el usuario")
+      }
 
-    const usuario = await db.User.findOne({ where: { email } });
+      const password = bycript.compareSync(req.body.password, user.password);
 
-    if (usuario) {
-        const validPassword = bcrypt.compareSync(password, usuario.password);
+      if (!password) {
+        return res.render("Contraseña Incorrecta")
+      }
 
-        if (validPassword) {
-            req.session.usuarioLogueado = usuario;
+      req.session.user = {
+        id: user.id,
+        name: user.usuario,
+        email: user.email
+      };
 
-            if (recordarme) {
-                res.cookie('userEmail', email, { maxAge: 1000 * 60 * 5 });
-            }
+      if (req.body.remember) {
+      }
+      return res.redirect('/users/profile');
 
-            return res.redirect('/users/profile');
-        }
-
-        return res.send("La contraseña es incorrecta");
-    }
-
-    return res.send("Ese email no está registrado");
+  })
+  .catch(function(error){
+    return res.send(error);})
 }
-
-
-};
+}
     
-
 module.exports = userController;
