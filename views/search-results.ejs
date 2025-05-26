@@ -34,27 +34,36 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 
-			<% if (resultados.length > 0) { %>
-				<% for(let i = 0; i < resultados.length; i++) { %>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<section class="product-box">
-							<a href="/products/<%= resultados[i].id %>">
-								<div class="product-box_image">
-									<img src="<%= resultados[i].imagen %>" alt="<%= resultados[i].nombre %>">
-								</div>
-								<article class="product-box_data">
-									<h2><%= resultados[i].nombre %></h2>
-									<p class="product-detail-description"><%= resultados[i].descripcion %></p>
-								</article>	
-							</a>
-						</section>
-					</div>
-					<% } %>
-					<% } else { %>
-						<div class="col-12">
-							<p>No se encontraron productos que coincidan con su busqueda.</p>
-						</div>
-					<% } %>
+		<h2>Resultados de búsqueda</h2>
+
+			<% if (productos.length > 0) { %>
+			<% for (let i = 0; i < productos.length; i++) { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+				  <section class="product-box">
+					<a href="/products/detalle/<%= productos[i].id %>">
+					  <figure class="product-box_image">
+						<img src="<%= productos[i].imagen %>" alt="<%= productos[i].nombre %>">
+					  </figure>
+					  <article class="product-box_data">
+						<h2><%= productos[i].nombre %></h2>
+						<p><%= productos[i].descripcion %></p>
+						<p>Comentarios: <%= productos[i].comentarios.length %></p>
+					  </article>
+					</a>
+				  </section>
+				</div>
+				<div>
+				<p>Publicado por:
+					<a href="/users/profile/<%= productos[i].user.id %>">
+					<%= productos[i].user.usuario %>
+					</a>
+				</p>
+				</div>
+			<% } %>
+			<% } else { %>
+			<p><%= mensaje %></p>
+			<% } %>
+
 
 
 	<!-- footer -->
