@@ -23,8 +23,10 @@ const userController = {
         res.render('register', {user: data.usuario});
     },
     login: function (req, res) {
-        res.render('login', {user: data.usuario});
-    },
+    console.log(req.cookies.userEmail);
+    res.render('login', {user: data.usuario, email: req.cookies.userEmail });
+},
+
    data: function (req, res) {
   if (req.body.password.length < 3) {
     return res.send("La contraseña debe tener al menos 3 caracteres");
@@ -62,10 +64,10 @@ const userController = {
           return res.render("No existe el usuario")
       }
 
-      const password = bycript.compareSync(req.body.password, user.password);
+      const password = bcrypt.compareSync(req.body.password, user.password);
 
       if (!password) {
-        return res.render("Contraseña Incorrecta")
+        return res.render('login', { error: "Contraseña incorrecta" });
       }
 
       req.session.user = {
@@ -74,14 +76,22 @@ const userController = {
         email: user.email
       };
 
-      if (req.body.remember) {
-      }
+    if (req.body.remember) {
+     res.cookie('userEmail', user.email, { maxAge: 1000 * 60 * 5 });
+    }
+      
       return res.redirect('/users/profile');
 
   })
   .catch(function(error){
     return res.send(error);})
+  },
+logout: function (req, res) {
+    res.clearCookie('userEmail');
+    req.session.destroy();
+    return res.redirect('/');
 }
+
 }
     
 module.exports = userController;
