@@ -25,27 +25,34 @@ const userController = {
     login: function (req, res) {
         res.render('login', {user: data.usuario});
     },
-    data: async function (req, res) {
-    const { usuario, email, password, fecha_nacimiento } = req.body;
+   data: function (req, res) {
+  if (req.body.password.length < 3) {
+    return res.send("La contraseña debe tener al menos 3 caracteres");
+  }
 
-    if (password.length < 3) {
-      return res.send("La contraseña debe tener al menos 3 caracteres");
-    }
+  db.User.findOne({ 
+    where: [{ email: req.body.email }] 
+})
+    .then(function (usuarioExistente) {
+      if (usuarioExistente) {
+        return res.send("Ese email ya está registrado");
+      }
 
-    const usuarioExistente = await db.User.findOne({ where: { email } });
-    if (usuarioExistente) {
-      return res.send("Ese email ya está registrado");
-    }
-
-    await db.User.create({
-      usuario,
-      email,
-      password: bcrypt.hashSync(password, 10),
-      fecha_nacimiento
+      return db.User.create({
+        usuario: req.body.usuario,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+        fecha_nacimiento: req.body.fecha_nacimiento
+      });
+    })
+    .then(function () {
+      res.redirect('/users/login');
+    })
+    .catch(function (error) {
+      console.log(error);
+      res.send("Ocurrió un error al registrar el usuario");
     });
-
-    return res.redirect('/login');
-  },
+},
   loginProceso: async function (req, res) {
     const { email, password, recordarme } = req.body;
 
