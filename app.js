@@ -11,12 +11,6 @@ var usersRouter = require('./routes/users');
 //Aca agregue 
 const productRouter = require('./routes/products');
 
-app.use(function(req, res, next) {
-    if (req.session.usuarioLogueado) {
-        res.locals.user = req.session.usuarioLogueado;
-    }
-    return next();
-});
 
 
 var app = express();
@@ -39,7 +33,15 @@ app.use('/users', usersRouter);
 //Aca agregue 
 app.use('/products', productRouter);
 
-
+app.use(function(req, res, next) {
+  res.locals.usuarioLogueado = {
+      nombreDeUsuario: user
+  }
+  if (req.session.usuarioLogueado != undefined) {
+    res.locals.user = req.session.usuarioLogueado
+  }
+  return next();
+});
 
 
 // catch 404 and forward to error handler
