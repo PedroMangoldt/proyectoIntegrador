@@ -6,7 +6,7 @@ CREATE TABLE usuarios (
     email VARCHAR(100) NOT NULL UNIQUE,
     contrasenia VARCHAR(255) NOT NULL,
     fecha_nacimiento DATE NOT NULL,
-    dni INT NOT NULL UNIQUE,
+    dni UNSIGNED INT NOT NULL UNIQUE,
     foto_perfil VARCHAR(255) DEFAULT '/images/users/fotoPerfil.jpeg',
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

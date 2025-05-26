@@ -1,4 +1,6 @@
 const data = require('../db/data');
+const db = require('../database/models');
+const bcrypt = require('bcryptjs');
 
 const userController = {
     index: function(req, res) {
@@ -23,6 +25,27 @@ const userController = {
     login: function (req, res) {
         res.render('login', {user: data.usuario});
     },
+    data: async function (req, res) {
+    const { usuario, email, password, fecha_nacimiento } = req.body;
+
+    if (password.length < 3) {
+      return res.send("La contraseña debe tener al menos 3 caracteres");
+    }
+
+    const usuarioExistente = await db.User.findOne({ where: { email } });
+    if (usuarioExistente) {
+      return res.send("Ese email ya está registrado");
+    }
+
+    await db.User.create({
+      usuario,
+      email,
+      password: bcrypt.hashSync(password, 10),
+      fecha_nacimiento
+    });
+
+    return res.redirect('/login');
+  }
 };
     
 
