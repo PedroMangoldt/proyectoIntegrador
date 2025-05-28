@@ -3,12 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
-
-//Aca agregue 
 const productRouter = require('./routes/products');
 
 
@@ -25,23 +22,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session( { secret: "Nuestro mensaje secreto",
+  resave: false,
+  saveUninitialized: true }));
+
+  app.use(function(req, res, next) {
+    if (req.session.usuarioLogueado != undefined) {
+      res.locals.user = req.session.usuarioLogueado
+    } else{
+      res.locals.user = null;
+    }
+    return next();
+  });
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
-
-
-//Aca agregue 
 app.use('/products', productRouter);
-
-app.use(function(req, res, next) {
-  res.locals.usuarioLogueado = {
-      nombreDeUsuario: user
-  }
-  if (req.session.usuarioLogueado != undefined) {
-    res.locals.user = req.session.usuarioLogueado
-  }
-  return next();
-});
 
 
 // catch 404 and forward to error handler
