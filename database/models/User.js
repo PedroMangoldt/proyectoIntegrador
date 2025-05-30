@@ -20,15 +20,22 @@ module.exports = function (sequelize, dataTypes) {
         fecha_nacimiento: {
             type: dataTypes.DATE
         },
-        created_at: {
+        createdat: {
+            type: dataTypes.DATE
+        },
+        updatedat: {
+            type: dataTypes.DATE
+        },
+        deletedat: {
             type: dataTypes.DATE
         }
+
     }
     
     let config = {
-        tableName : "usuarios",
+        tableName: "usuarios",
         timestamps:true,
-        underscored: true,
+        underscored: false,
     };
     
     const User = sequelize.define(alias, cols, config);
