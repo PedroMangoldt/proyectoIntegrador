@@ -27,8 +27,8 @@ app.use(session( { secret: "Nuestro mensaje secreto",
   saveUninitialized: true }));
 
   app.use(function(req, res, next) {
-    if (req.session.usuarioLogueado != undefined) {
-      res.locals.user = req.session.usuarioLogueado
+    if (req.session.user != undefined) {
+      res.locals.user = req.session.user
     } else{
       res.locals.user = null;
     }

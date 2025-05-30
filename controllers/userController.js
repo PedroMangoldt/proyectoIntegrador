@@ -13,6 +13,9 @@ const userController = {
     },
 
     profile: function(req, res) {
+      if (!req.session.user) {
+        return res.redirect('/users/login')
+      }
     let idUsuario = req.session.user.id;
 
     db.User.findByPk(idUsuario, {
@@ -34,7 +37,7 @@ const userController = {
 },
 
    data: function (req, res) {
-  if (req.body.password.length < 3) {
+  if (req.body.contrasenia.length < 3) {
     return res.send("La contraseña debe tener al menos 3 caracteres");
   }
 
@@ -49,7 +52,7 @@ const userController = {
       return db.User.create({
         usuario: req.body.usuario,
         email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 10),
+        contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
         fecha_nacimiento: req.body.fecha_nacimiento
       });
     })
@@ -70,7 +73,7 @@ const userController = {
           return res.render("No existe el usuario")
       }
 
-      const password = bcrypt.compareSync(req.body.password, user.password);
+      const password = bcrypt.compareSync(req.body.contrasenia, user.contrasenia);
 
       if (!password) {
         return res.render('login', { error: "Contraseña incorrecta" });
@@ -86,7 +89,7 @@ const userController = {
      res.cookie('userEmail', user.email, { maxAge: 1000 * 60 * 5 });
     }
       
-      return res.redirect('/users/profile');
+      return res.redirect('/');
 
   })
   .catch(function(error){
