@@ -13,11 +13,17 @@ const userController = {
     },
 
     profile: function(req, res) {
+    let idUsuario = req.session.user.id;
 
-        let usuario = data.usuario;
-        let productosDelUsuario = data.productos;
+    db.User.findByPk(idUsuario, {
+        include: [{ association: "productos" }]
+    })
+    .then(function(usuario) {
+        let productosDelUsuario = usuario.productos;
 
-        return res.render('profile', { user: usuario, productos: productosDelUsuario});
+        return res.render('profile', { user: usuario, productos: productosDelUsuario });
+    });
+  
     },
     register: function (req, res) {
         res.render('register', {user: data.usuario});
