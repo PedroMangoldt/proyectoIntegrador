@@ -53,7 +53,8 @@ const userController = {
         usuario: req.body.usuario,
         email: req.body.email,
         contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
-        fecha_nacimiento: req.body.fecha_nacimiento
+        fecha_nacimiento: req.body.fecha_nacimiento,
+        dni: req.body.dni
       });
     })
     .then(function () {
