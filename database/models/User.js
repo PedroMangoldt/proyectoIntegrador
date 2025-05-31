@@ -20,13 +20,13 @@ module.exports = function (sequelize, dataTypes) {
         fecha_nacimiento: {
             type: dataTypes.DATE
         },
-        createdat: {
+        createdAt: {
             type: dataTypes.DATE
         },
-        updatedat: {
+        updatedAt: {
             type: dataTypes.DATE
         },
-        deletedat: {
+        deletedAt: {
             type: dataTypes.DATE
         }
 
