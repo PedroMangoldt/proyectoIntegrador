@@ -4,10 +4,27 @@ const db = require("../database/models")
 
 const productController = {
     detalle: function (req, res) {
+        let idProducto = req.params.id;
 
-        const producto = data.productos[4];
-        return res.render('product', { producto });
+        db.Product.findByPk(idProducto, {
+            include: [
+                { association: "comentarios", include: [{ association: "usuario" }] },
+                { association: "usuario" }
+            ]
+        })
+        .then(function(producto) {
+            if (producto) {
+                res.render('product', { producto });
+            } else {
+                res.send("Producto no encontrado");
+            }
+        })
+        .catch(function(error) {
+            console.log(error);
+            res.send("Error al buscar el producto");
+        });
     },
+
     searchResults: function (req, res) {
         const busqueda = req.query.search;
         const op = db.Sequelize.Op;
@@ -45,7 +62,7 @@ const productController = {
         id_usuario: req.session.user.id,
         nombre: req.body.nombreP,
         descripcion: req.body.descripcion,
-        imagen: req.body.imagen
+        imagen: '/images/products' + req.body.imagen
         // tenemos que agregar el created at//
     })
     .then(function () {
