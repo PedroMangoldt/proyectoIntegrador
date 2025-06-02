@@ -7,7 +7,7 @@ const indexController = {
             include: [{ association: "usuario"},  {association:"comentarios"}]
         })
         .then(function(productos) {
-            return res.render('index', { productos: productos, user: req.session.user});
+            return res.render('index', { productos: productos});
         })
         .catch(function (error) {
             console.log(error);

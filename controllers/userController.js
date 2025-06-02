@@ -19,7 +19,7 @@ const userController = {
     let idUsuario = req.session.user.id;
 
     db.User.findByPk(idUsuario, {
-        include: [{ association: "productos" }]
+        include: [{ association: "productos" , include:[{association: "comentarios"}]}]
     })
     .then(function(usuario) {
         let productosDelUsuario = usuario.productos;
