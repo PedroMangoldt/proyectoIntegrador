@@ -32,9 +32,30 @@ const productController = {
         })
     },
     add: function (req, res) {
-        res.render("product-add");
+        if (!req.session.user){
+            return res.redirect('/users/login');
+        }
+        return res.render('product-add', {user:req.session.user});
     },
-    
-};
+    productSave: function (req, res) {
+        if (!req.session.user){
+            return res.redirect('/users/login');
+        }
+    db.Product.create({
+        id_usuario: req.session.user.id,
+        nombre: req.body.nombreP,
+        descripcion: req.body.descripcion,
+        imagen: req.body.imagen
+        // tenemos que agregar el created at//
+    })
+    .then(function () {
+        res.redirect('/');
+      })
+      .catch(function (error) {
+        console.log(error);
+        res.send("Ocurrió un error al cargar el producto");
+      });
+},
+}
 
 module.exports = productController;

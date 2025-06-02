@@ -3,7 +3,7 @@ USE techstyle_db;
 
 CREATE TABLE usuarios (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    usuario VARCHAR(100) NOT NULL UNIQUE,
+
     email VARCHAR(100) NOT NULL UNIQUE,
     contrasenia VARCHAR(255) NOT NULL,
     fecha_nacimiento DATE NOT NULL,
