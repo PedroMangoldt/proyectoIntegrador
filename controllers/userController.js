@@ -29,7 +29,7 @@ const userController = {
   
     },
     register: function (req, res) {
-      if (!req.session.user != undefined){
+      if (req.session.user != undefined){
         return res.redirect('/users/profile')
       }
         res.render('register', {user: data.usuario});
@@ -104,7 +104,31 @@ logout: function (req, res) {
     res.clearCookie('userEmail');
     req.session.destroy();
     return res.redirect('/');
-}
+  },
+  perfil: function (req, res) {
+    db.User.findByPk(req.params.id, {
+        include: [
+            {
+                association: "productos",
+                include: [{ association: "comentarios" }]
+            }
+        ]
+    })
+    .then(function (usuario) {
+        if (!usuario) {
+            return res.send("Usuario no encontrado");
+        }
+
+        res.render("profile", {
+            user: usuario,
+            productos: usuario.productos
+        });
+    })
+    .catch(function (error) {
+        console.log(error);
+        res.send("Error al cargar perfil");
+    });
+  }
 
 }
     

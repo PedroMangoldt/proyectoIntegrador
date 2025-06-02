@@ -14,6 +14,8 @@ router.get('/login', userController.login);
 router.post('/register', userController.data)
 router.post('/login', userController.loginProceso);
 router.get('/logout', userController.logout);
+router.get('/perfil/:id', userController.perfil);
+
 
 
 

@@ -73,6 +73,25 @@ const productController = {
         res.send("Ocurrió un error al cargar el producto");
       });
 },
+    saveComment: function (req, res) {
+    if (!req.session.user) {
+        return res.redirect('/users/login');
+    }
+
+    db.Comentario.create({
+        id_producto: req.params.id,
+        id_usuario: req.session.user.id,
+        texto: req.body.texto,
+    })
+    .then(function () {
+        res.redirect('/products/detalle/' + req.params.id);
+    })
+    .catch(function (error) {
+        console.log(error);
+        res.send("Error al guardar el comentario");
+    });
+}
+
 }
 
 module.exports = productController;

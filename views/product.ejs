@@ -45,22 +45,30 @@
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<% for (let i = 0; i < productos.comentarios.length; i++) { %>
-						  <article>
-							<img src="<%= productos.comentarios[i].imagenPerfil %>" alt="foto perfil" width="35">
-							<div class="data">
-							  <p class="user">
-								<strong><a href="/users/profile"><%= productos.comentarios[i].nombreUsuario %>:</a></strong>
-								<%= productos.comentarios[i].texto %>
-							  </p>
-							</div>
-						  </article>
+							<article>
+								<div class="data">
+								<p class="user">
+									<a href="/users/perfil/<%= productos.comentarios[i].usuario.id %>">
+										<%= productos.comentarios[i].usuario.usuario %>
+									</a>:
+									<%= productos.comentarios[i].texto %>
+								</p>
+								</div>
+							</article>
 						<% } %>
 					  </section>
 					  
-					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
+							<% if (locals.user != undefined) { %>
+							<form action="/products/detalle/<%= productos.id %>/comentario" method="POST">
+								<label for="comentario">Tu comentario:</label>
+								<input type="text" id="comentario" name="texto" placeholder="Escribí tu comentario acá..." required>
+								<button type="submit">Enviar comentario</button>
+							</form>
+							<% } else { %>
+							<p><a href="/users/login">Iniciá sesión</a> para dejar tu comentario!</p>
+							<% } %>
+
+
 					<hr>
 				</div>
 			</div>
