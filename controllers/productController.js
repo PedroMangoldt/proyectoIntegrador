@@ -33,7 +33,7 @@ const productController = {
             where: {
                 nombre: {[op.like]: `%${busqueda}%`}
             },
-            include: [{association: "usuario"}]
+            include: [{association: "usuario"}, {association:"comentarios"}]
         })
         .then(function(productos){
         if(productos.length > 0){
