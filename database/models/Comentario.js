@@ -5,19 +5,16 @@ module.exports = function (sequelize, dataTypes) {
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: dataTypes.INTEGER.UNSIGNED
+            type: dataTypes.INTEGER
         },
         id_producto: {
-            type: dataTypes.INTEGER.UNSIGNED,
-            allowNull: false
+            type: dataTypes.INTEGER
         },
         id_usuario: {
-            type: dataTypes.INTEGER.UNSIGNED,
-            allowNull: false
+            type: dataTypes.INTEGER
         },
         texto: {
-            type: dataTypes.TEXT,
-            allowNull: false
+            type: dataTypes.TEXT
         },
         createdAt: {
             type: dataTypes.DATE
