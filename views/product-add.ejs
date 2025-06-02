@@ -19,11 +19,7 @@
 
 <body>
 	<!-- Header -->
-<% if (user) { %>
-  <%- include('partials/headerLogueado') %>
-<% } else { %>
-  <%- include('partials/headerNoLogueado') %>
-<% } %>
+	<%- include('partials/header') %>
 	<!-- /Header -->
 
 	<!-- Novedades -->
@@ -44,6 +40,8 @@
 
 			<label for="descripcion">Descripción:</label>
 			<input type="text" id="descripcion" name="descripcion">
+
+			<button type="submit">Enviar</button>
 
 			</form>
 	<!-- footer -->

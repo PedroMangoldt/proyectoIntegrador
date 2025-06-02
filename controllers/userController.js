@@ -29,7 +29,11 @@ const userController = {
   
     },
     register: function (req, res) {
+      if (!req.session.user != undefined){
+        return res.redirect('/users/profile')
+      }
         res.render('register', {user: data.usuario});
+        
     },
     login: function (req, res) {
     console.log(req.cookies.userEmail);
@@ -64,24 +68,20 @@ const userController = {
         res.send("Ocurrió un error al registrar el usuario");
       });
     })
-    .catch(function (error) {
-      console.log(error);
-      res.send("Ocurrió un error al registrar el usuario");
-    });
 },
-  loginProceso: async function (req, res) {
+  loginProceso: function (req, res) {
     db.User.findOne({
       where : [{email: req.body.email}]
     })
       .then(function(user) {
         if (!user) {
-          return res.render("No existe el usuario")
+          return res.render('login', {error:"No existe el usuario"})
       }
 
-      const password = bcrypt.compareSync(req.body.contrasenia, user.contrasenia);
+      const password = bcrypt.compareSync(req.body.password, user.contrasenia);
 
       if (!password) {
-        return res.render('login', { error: "Contraseña incorrecta" });
+        return res.render('login', {error:"Contraseña incorrecta"});
       }
 
       req.session.user = {

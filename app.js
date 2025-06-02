@@ -28,10 +28,8 @@ app.use(session( { secret: "Nuestro mensaje secreto",
 
   app.use(function(req, res, next) {
     if (req.session.user != undefined) {
-      res.locals.user = req.session.user
-    } else{
-      res.locals.user = null;
-    }
+      res.locals.user = req.session.user;
+    } 
     return next();
   });
 
