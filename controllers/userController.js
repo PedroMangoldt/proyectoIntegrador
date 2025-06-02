@@ -48,17 +48,21 @@ const userController = {
       if (usuarioExistente) {
         return res.send("Ese email ya está registrado");
       }
-
-      return db.User.create({
+      console.log(req.body);
+       db.User.create({
+        dni: req.body.dni,
         usuario: req.body.usuario,
         email: req.body.email,
         contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
-        fecha_nacimiento: req.body.fecha_nacimiento,
-        dni: req.body.dni
+        fecha_nacimiento: req.body.fecha_nacimiento, 
+      })
+      .then(function () {
+        res.redirect('/users/login');
+      })
+      .catch(function (error) {
+        console.log(error);
+        res.send("Ocurrió un error al registrar el usuario");
       });
-    })
-    .then(function () {
-      res.redirect('/users/login');
     })
     .catch(function (error) {
       console.log(error);
