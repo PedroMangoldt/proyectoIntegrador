@@ -4,7 +4,7 @@ const db = require('../database/models');
 const indexController = {
     index: function(req, res) {
         db.Product.findAll({
-            include: [{ association: "usuario" }]
+            include: [{ association: "usuario"},  {association:"comentarios"}]
         })
         .then(function(productos) {
             return res.render('index', { productos: productos, user: req.session.user});
