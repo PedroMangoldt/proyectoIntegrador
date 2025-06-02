@@ -40,12 +40,12 @@ CREATE TABLE comentarios (
 
 USE techstyle_db;
 
-INSERT INTO usuarios (email, contrasenia, fecha_nacimiento, dni, foto_perfil) VALUES 
-('juanperez@ejemplito.com', 'supersegura123', '1995-06-15', 40123456, '/images/users/fotoPerfil.jpeg'),
-('maria123@gmail.com', 'clave1234', '1998-03-10', 41234567, '/images/users/default-image.png'),
-('coffeeLover@hotmail.com', 'passcafe99', '1990-09-21', 42345678, '/images/users/default-image.png'),
-('techie88@gmail.com', 'techtech88', '1988-12-05', 43456789, '/images/users/default-image.png'),
-('ana_rock@outlook.com', 'rockerpass', '1993-07-30', 44567890, '/images/users/default-image.png'),
+INSERT INTO usuarios (usuario, email, contrasenia, fecha_nacimiento, dni, foto_perfil) VALUES 
+('juanperez','juanperez@ejemplito.com', 'supersegura123', '1995-06-15', 40123456, '/images/users/fotoPerfil.jpeg'),
+('maria123','maria123@gmail.com', 'clave1234', '1998-03-10', 41234567, '/images/users/default-image.png'),
+('coffeeLover','coffeeLover@hotmail.com', 'passcafe99', '1990-09-21', 42345678, '/images/users/default-image.png'),
+('techie88','techie88@gmail.com', 'techtech88', '1988-12-05', 43456789, '/images/users/default-image.png'),
+('ana_rock','ana_rock@outlook.com', 'rockerpass', '1993-07-30', 44567890, '/images/users/default-image.png');
 
 INSERT INTO productos (id_usuario, imagen, nombre, descripcion) VALUES
 (1, '/images/products/mouseGamer.png', 'Mouse gamer RGB', 'Mouse con luces LED, diseño ergonómico y múltiples botones para gaming.'),
@@ -60,42 +60,42 @@ INSERT INTO productos (id_usuario, imagen, nombre, descripcion) VALUES
 (5, '/images/products/monitorGame.png', 'Monitor gamer 144Hz', 'Monitor ultra ancho con alta tasa de refresco para juegos.');
 
 INSERT INTO comentarios (id_producto, id_usuario, texto) VALUES
-(1, 2, '¡Anda perfecto para jugar al Fortnite!'),
-(1, 3, 'Me encanta su diseño.'),
-(1, 4, 'Muy cómodo y preciso.'),
+(11, 2, '¡Anda perfecto para jugar al Fortnite!'),
+(11, 3, 'Me encanta su diseño.'),
+(11, 4, 'Muy cómodo y preciso.'),
 
-(2, 4, 'Excelente para edición de video.'),
-(2, 5, 'La superficie es ideal para gaming.'),
-(2, 1, 'Buena calidad, se ve duradero.'),
+(12, 4, 'Excelente para edición de video.'),
+(12, 5, 'La superficie es ideal para gaming.'),
+(12, 1, 'Buena calidad, se ve duradero.'),
 
-(3, 5, 'El sonido de los parlantes es increíble.'),
-(3, 2, 'Perfecto para ver películas.'),
-(3, 3, 'Me encanta el diseño RGB.'),
+(13, 5, 'El sonido de los parlantes es increíble.'),
+(13, 2, 'Perfecto para ver películas.'),
+(13, 3, 'Me encanta el diseño RGB.'),
 
-(4, 4, 'Le da mucha onda al setup.'),
-(4, 5, 'Fácil de instalar y controlar.'),
-(4, 2, 'Se ve genial en la oscuridad.'),
+(14, 4, 'Le da mucha onda al setup.'),
+(14, 5, 'Fácil de instalar y controlar.'),
+(14, 2, 'Se ve genial en la oscuridad.'),
 
-(5, 4, 'Muy cómodo.'),
-(5, 2, 'Tiene mucho espacio.'),
-(5, 3, 'Ideal para trabajar y jugar.'),
+(15, 4, 'Muy cómodo.'),
+(15, 2, 'Tiene mucho espacio.'),
+(15, 3, 'Ideal para trabajar y jugar.'),
 
-(6, 3, 'Es muy ergonómica.'),
-(6, 4, 'Soporte lumbar excelente.'),
-(6, 5, 'No me canso nunca de estar sentado.'),
+(16, 3, 'Es muy ergonómica.'),
+(16, 4, 'Soporte lumbar excelente.'),
+(16, 5, 'No me canso nunca de estar sentado.'),
 
-(7, 2, 'El micrófono es muy claro.'),
-(7, 1, 'Aíslan bien el sonido.'),
-(7, 4, 'Perfectos para streaming.'),
+(17, 2, 'El micrófono es muy claro.'),
+(17, 1, 'Aíslan bien el sonido.'),
+(17, 4, 'Perfectos para streaming.'),
 
-(8, 4, 'Muy lindo y responde rápido.'),
-(8, 5, 'Los switches se sienten geniales.'),
-(8, 2, 'Iluminación muy pro.'),
+(18, 4, 'Muy lindo y responde rápido.'),
+(18, 5, 'Los switches se sienten geniales.'),
+(18, 2, 'Iluminación muy pro.'),
 
-(9, 1, 'Ideal para juegos pesados.'),
-(9, 6, 'Tiene buena ventilación.'),
-(9, 3, 'El vidrio templado es hermoso.'),
+(19, 1, 'Ideal para juegos pesados.'),
+(19, 6, 'Tiene buena ventilación.'),
+(19, 3, 'El vidrio templado es hermoso.'),
 
-(10, 2, 'Es muy bueno para juegos competitivos.'),
-(10, 4, 'Colores y definición impecables.'),
-(10, 5, 'Muy fluido para FPS.');
+(20, 2, 'Es muy bueno para juegos competitivos.'),
+(20, 4, 'Colores y definición impecables.'),
+(20, 5, 'Muy fluido para FPS.');
