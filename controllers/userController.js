@@ -32,12 +32,12 @@ const userController = {
       if (req.session.user != undefined){
         return res.redirect('/users/profile')
       }
-        res.render('register', {user: data.usuario});
+        res.render('register');
         
     },
     login: function (req, res) {
     console.log(req.cookies.userEmail);
-    res.render('login', {user: data.usuario, email: req.cookies.userEmail });
+    res.render('login', {email: req.cookies.userEmail });
 },
 
    data: function (req, res) {
